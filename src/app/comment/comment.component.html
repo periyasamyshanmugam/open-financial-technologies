@@ -1,12 +1,10 @@
-<h2>Comments
-    <button class="btn btn-link clear-comments" (click)="clear()"><span class="glyphicon glyphicon-trash"
-            aria-hidden="true"></span> Clear</button>
+<h2 class="border-bottom">Comments
 </h2>
 <ul class="comments">
     <li *ngFor='let comment of commentsTreeExpanded' class="depth{{comment.depth}}">
         <div class="col-md-12 row">
             <div class="col-md-3">
-                <img src="./../../images/default_avatar.png" alt="default_avatar" class="img-circle center-block"
+                <img src="./../../assets/images/default_avatar.png" alt="default_avatar" class="img-circle center-block"
                     width="36" height="36">
                 <div class="text-center comment-name">{{ comment.name }}</div>
                 <div class="text-center comment-id">{{ comment.unique_id }}</div>
@@ -16,12 +14,11 @@
             <div class="col-md-9">
                 <div>{{ comment.message }}</div>
                 <div>
-                    <a href="javascript:void(0)" (click)="upvoted(comment)" aria-label="Upvotes" title="Upvotes"
-                        class="upvotes"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                    <a (click)="upvoted(comment)" aria-label="Upvotes" title="Upvotes" class="upvotes"><span
+                            class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
                         {{ comment.upvotes }} </a>
 
-                    <a href="javascript:void(0)" (click)="downvoted(comment)" aria-label="Downvotes" title="Downvotes"
-                        class="downvotes">
+                    <a (click)="downvoted(comment)" aria-label="Downvotes" title="Downvotes" class="downvotes">
                         <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
                         {{ comment.downvotes }} </a>
 
@@ -29,7 +26,8 @@
                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Reply</button>
                 </div>
                 <div *ngIf="comment.replying">
-                    <app-comment-form [parent]="comment" (commentAdded)="onCmdSubmit($event, comment)"></app-comment-form>
+                    <app-comment-form [parent]="comment" (commentAdded)="onCmdSubmit($event, comment)">
+                    </app-comment-form>
                 </div>
             </div>
 

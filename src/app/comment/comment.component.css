@@ -73,3 +73,6 @@ li.depth4 {
 .clear-comments:hover {
     color: red;
 }
+.border-bottom {
+    border-bottom: solid black 1px;
+}
