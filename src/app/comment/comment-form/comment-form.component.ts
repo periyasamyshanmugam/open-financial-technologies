@@ -12,7 +12,7 @@ export class CommentFormComponent implements OnInit {
   comment: Comment;
 
   @Input() parent: Comment;
-  @Output() commentAdded = new EventEmitter<boolean>();
+  @Output() commentAdded = new EventEmitter<Comment>();
 
   constructor() { }
 
@@ -46,6 +46,7 @@ export class CommentFormComponent implements OnInit {
       this.comment.name = 'Anonymous';
     if (!this.comment.email)
       this.comment.email = 'anonymous@comment.app';
+    this.commentAdded.emit(this.comment);
   }
 
 }

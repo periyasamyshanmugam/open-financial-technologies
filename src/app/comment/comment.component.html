@@ -6,8 +6,8 @@
     <li *ngFor='let comment of commentsTreeExpanded' class="depth{{comment.depth}}">
         <div class="col-md-12 row">
             <div class="col-md-3">
-                <img src="./../../images/default_avatar.png"
-                    alt="default_avatar" class="img-circle center-block" width="36" height="36">
+                <img src="./../../images/default_avatar.png" alt="default_avatar" class="img-circle center-block"
+                    width="36" height="36">
                 <div class="text-center comment-name">{{ comment.name }}</div>
                 <div class="text-center comment-id">{{ comment.unique_id }}</div>
                 <div class="text-center moment-ago">{{ comment.created_at }}</div>
@@ -29,7 +29,7 @@
                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Reply</button>
                 </div>
                 <div *ngIf="comment.replying">
-                    <app-comment-form [parent]="comment"></app-comment-form>
+                    <app-comment-form [parent]="comment" (commentAdded)="onCmdSubmit($event, comment)"></app-comment-form>
                 </div>
             </div>
 

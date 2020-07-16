@@ -37,4 +37,9 @@ export class CommentComponent implements OnInit {
     comment.downvotes += 1;
   }
 
+  onCmdSubmit(event, comment) {
+    comment.replying = false;
+    this.commentsTreeExpanded.push(event);
+  }
+
 }
