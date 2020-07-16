@@ -25,18 +25,27 @@ export class CommentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clear() {
-
-  }
-
-  upvoted(comment) {
+  /**
+   * Method to increase comment upvote
+   * @param comment
+   */
+  public upvoted(comment) {
     comment.upvotes += 1;
   }
 
-  downvoted(comment) {
+  /**
+   * Method to increase comment downvote
+   * @param comment
+   */
+  public downvoted(comment) {
     comment.downvotes += 1;
   }
 
+  /**
+   * Method to add a new reply
+   * @param event
+   * @param event
+   */
   onCmdSubmit(event, comment) {
     comment.replying = false;
     this.commentsTreeExpanded.push(event);

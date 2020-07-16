@@ -36,16 +36,20 @@ export class CommentFormComponent implements OnInit {
 
   reset() {
     this.comment = this.new_comment();
-    if (!this.parent) // if there is no parent comment, assign a new comment object
+    // if there is no parent comment, assign a new comment object
+    if (!this.parent) {
       this.parent = this.new_comment();
+    }
     this.comment.parent_id = this.parent._id;
   }
 
   onSubmit() {
-    if (!this.comment.name)
+    if (!this.comment.name) {
       this.comment.name = 'Anonymous';
-    if (!this.comment.email)
+    }
+    if (!this.comment.email) {
       this.comment.email = 'anonymous@comment.app';
+    }
     this.commentAdded.emit(this.comment);
   }
 
