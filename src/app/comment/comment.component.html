@@ -1,7 +1,7 @@
 <h2 class="border-bottom">Comments
 </h2>
 <ul class="comments">
-    <li *ngFor='let comment of commentsTreeExpanded' class="depth{{comment.depth}}">
+    <li *ngFor='let comment of commentsTreeExpanded | paginate: { itemsPerPage: 2, currentPage: currentPage }' class="depth{{comment.depth}}">
         <div class="col-md-12 row">
             <div class="col-md-3">
                 <img src="./../../assets/images/default_avatar.png" alt="default_avatar" class="img-circle center-block"
@@ -39,3 +39,4 @@
 
     </li>
 </ul>
+<pagination-controls (pageChange)="currentPage = $event" autoHide="true"></pagination-controls>

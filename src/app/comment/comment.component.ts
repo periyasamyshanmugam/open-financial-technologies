@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentComponent implements OnInit {
   comments: Comment[];
+  public currentPage = 1;
   public commentsTreeExpanded = [
     {
       name: 'Samy',

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CommentComponent } from './comment/comment.component';
 import { CommentFormComponent } from './comment/comment-form/comment-form.component';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
